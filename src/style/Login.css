@@ -10,7 +10,13 @@
     #login form{
       display: flex;
       flex-direction: column;
+      padding: 10px;
     }
+
+      #login form label{
+        margin-top: 15px;
+        margin-bottom: 0;
+      }
 
       #login form button{
         margin-top: 25px;
@@ -46,9 +52,11 @@
       align-items: center;
       flex-wrap: wrap;
       width: 599px;
+      padding: 10px;
     }
 
       #login form label{
+        display: flex;
         width: 50px;
       }
 
