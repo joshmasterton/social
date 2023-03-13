@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "@firebase/auth";
+import { 
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, 
+  updateProfile, 
+} from "@firebase/auth";
 import "../style/Login.css";
 import { auth } from "../firebaseConfig";
 
@@ -29,7 +33,16 @@ const Login = ({user, setUser}) => {
           <input id="loginPass" onChange={(e) => {
             setLoginPass(e.target.value);
           }} value={loginPass} type="password" required/>
-          <button>Login</button>
+          <button onClick={async (e) => {
+            e.preventDefault();
+            await signInWithEmailAndPassword(
+              auth,
+              loginEmail,
+              loginPass
+            ).then((userCred) => {
+              setUser(userCred.user);
+            });
+          }}>Login</button>
         </form>
         <footer>
           <div>Need An Account?</div>
@@ -65,8 +78,9 @@ const Login = ({user, setUser}) => {
           <input id="createConPass" onChange={(e) => {
             setCreateConPass(e.target.value);
           }} value={createConPass} type="password" required/>
-          <button onClick={async () => {
+          <button onClick={async (e) => {
             if(createPass === createConPass){
+              e.preventDefault();
               await createUserWithEmailAndPassword(
                 auth, 
                 createEmail,

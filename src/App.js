@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
 import { auth } from "./firebaseConfig.js";
 import Login from "./comp/Login.js";
+import Loading from "./comp/Loading.js";
+import Home from "./comp/Home.js";
 import "./App.css";
 
 const App = () => {
@@ -15,11 +17,17 @@ const App = () => {
     });
   });
 
-  return (
-    <HashRouter>
-      <Login user={user} setUser={setUser}/>
-    </HashRouter>
-  );
+  if(user === "Loading"){
+    return <Loading/>
+  }else if(user === null){
+    return <Login user={user} setUser={setUser}/>
+  }else{
+    return (
+      <HashRouter>
+        <Home/>
+      </HashRouter>
+    );
+  };
 };
 
 export default App;
