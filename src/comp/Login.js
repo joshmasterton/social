@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { createUserWithEmailAndPassword, updateProfile } from "@firebase/auth";
 import "../style/Login.css";
+import { auth } from "../firebaseConfig";
 
-const Login = () => {
+const Login = ({user, setUser}) => {
   // Button to decide which page to render
   const [isLogin, setIsLogin] = useState(true);
   // Input fields for login or create details
@@ -63,9 +65,19 @@ const Login = () => {
           <input id="createConPass" onChange={(e) => {
             setCreateConPass(e.target.value);
           }} value={createConPass} type="password" required/>
-          <button onClick={() => {
+          <button onClick={async () => {
             if(createPass === createConPass){
-
+              await createUserWithEmailAndPassword(
+                auth, 
+                createEmail,
+                createPass,
+              ).then((userCred) => {
+                setUser("Loading");
+                updateProfile(userCred.user, {
+                  displayName: createUsername,
+                });
+                window.location.reload();
+              });
             }else{
               alert("Passwords Do Not Match")
             };

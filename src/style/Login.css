@@ -30,10 +30,6 @@
       #login footer div{
         font-size: 0.75rem;
       }
-
-      #login footer button{
-        font-size: 0.75rem;
-      }
 }
 
 @media(min-width: 600px){
@@ -48,20 +44,19 @@
 
     #login form{
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      width: 599px;
+      width: 595px;
       padding: 10px;
     }
 
       #login form label{
-        display: flex;
         width: 50px;
       }
 
       #login form input{
-        width: 150px;
+        width: 175px;
       }
 
       #login form button{
@@ -76,8 +71,4 @@
       #login footer div{
         font-size: 0.75rem;
       }
-
-      #login footer button{
-        font-size: 0.75rem;
-      }  
 }
