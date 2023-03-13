@@ -18,6 +18,9 @@
         margin-bottom: 0;
       }
 
+      #login form input{
+      }
+
       #login form button{
         margin-top: 25px;
       }
@@ -28,7 +31,6 @@
     }
 
       #login footer div{
-        font-size: 0.75rem;
       }
 }
 
@@ -69,6 +71,5 @@
     }
 
       #login footer div{
-        font-size: 0.75rem;
       }
 }

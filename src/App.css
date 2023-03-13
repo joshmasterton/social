@@ -10,16 +10,17 @@
 
 label{
   margin: 7.5px;
-  padding-left: 7.5px;
-  padding-right: 7.5px;
-  font-size: 0.75rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 input{
   margin: 7.5px;
   padding: 7.5px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 25px;
-  outline: 1px solid black;
+  border: 1px solid black;
 }
 
 button{
@@ -28,6 +29,8 @@ button{
   align-items: center;
   margin: 7.5px;
   padding: 7.5px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 25px;
   color: white;
   background: linear-gradient(25deg, #eb3349, #f45c43)
