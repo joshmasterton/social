@@ -1,8 +1,8 @@
-import "../style/Home.css";
+import "../style/Bottom.css";
 
-const Home = ({user}) => {
+const Bottom = ({user}) => {
   return (
-    <div id="home">
+    <div id="bottom">
       <header>{user.displayName}</header>
       <main>{user.email}</main>
       <footer></footer>
@@ -10,4 +10,4 @@ const Home = ({user}) => {
   );
 };
 
-export default Home;
+export default Bottom;

@@ -90,8 +90,9 @@ const Login = ({user, setUser}) => {
                 updateProfile(userCred.user, {
                   displayName: createUsername,
                 });
-                window.location.reload();
               });
+              setUser("Loading");
+              window.location.reload();
             }else{
               alert("Passwords Do Not Match")
             };

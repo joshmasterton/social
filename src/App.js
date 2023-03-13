@@ -24,7 +24,7 @@ const App = () => {
   }else{
     return (
       <HashRouter>
-        <Home/>
+        <Home user={user}/>
       </HashRouter>
     );
   };
