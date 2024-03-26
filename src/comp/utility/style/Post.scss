@@ -1,0 +1,14 @@
+@use '../../../App';
+
+.post {
+  width: 100%;
+  min-height: calc(App.$height * 2);
+}
+
+html.dark .post {
+  border: App.$darkOutline;
+}
+
+html.light .post {
+  border: App.$lightOutline;
+}

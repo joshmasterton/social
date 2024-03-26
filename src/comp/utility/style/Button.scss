@@ -1,0 +1,31 @@
+@use '../../../App';
+
+button {
+  position: relative;
+  width: fit-content;
+  height: App.$height;
+  max-height: App.$height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: App.$round;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+
+html.dark button {
+  color: App.$darkFont;
+  background: App.$dark;
+}
+
+html.light button {
+  color: App.$lightFont;
+  background: App.$light;
+}
+
+button > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+}

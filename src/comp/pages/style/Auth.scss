@@ -1,0 +1,84 @@
+@use '../../../App';
+
+#auth {
+  width: 100%;
+  max-width: App.$maxWidth;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: App.$padding;
+  gap: App.$padding;
+  padding-top: calc(App.$padding * 5);
+  padding-bottom: calc(App.$padding * 5);
+  border-radius: App.$roundEdge;
+}
+
+#auth > header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: App.$padding;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#auth > main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  gap: App.$padding;
+  padding: App.$padding;
+  border-radius: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#auth > main div {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  padding-left: App.$padding;
+  padding-right: App.$padding;
+  gap: App.$padding;
+  color: red;
+}
+
+#auth > main div > svg {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+}
+
+#auth > main button {
+  margin-top: App.$padding;
+  padding-left: calc(App.$padding * 2);
+  padding-right: calc(App.$padding * 2);
+  background: App.$primary;
+  color: App.$darkFont;
+}
+
+#auth > footer {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: App.$padding;
+}
+
+#auth > footer svg {
+  color: App.$light;
+  background: App.$primary;
+}

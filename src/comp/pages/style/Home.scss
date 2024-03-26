@@ -1,0 +1,10 @@
+@use '../../../App';
+
+#home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: App.$padding;
+  gap: App.$padding;
+  margin-top: calc(App.$height + (App.$padding));
+}

@@ -1,0 +1,127 @@
+@use '../../../App';
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(App.$height);
+  padding: App.$padding;
+  gap: App.$padding;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+nav > main > header {
+  flex: 1;
+}
+
+nav > main > header > h1 {
+  display: none;
+}
+
+nav > main {
+  display: flex;
+  height: calc(App.$height);
+  justify-content: end;
+  align-items: center;
+  flex: 1;
+}
+
+html.dark nav > main,
+html.dark nav > main button {
+  background: App.$dark;
+}
+
+html.light nav > main,
+html.light nav > main button {
+  background: App.$light;
+}
+
+nav > main > div {
+  display: none;
+}
+
+nav > main > button {
+  display: none;
+}
+
+nav > footer {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s ease;
+  z-index: -1;
+}
+
+html.dark nav > footer {
+  background: App.$dark;
+}
+
+html.light nav > footer {
+  background: App.$light;
+}
+
+nav > footer > button {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+
+nav > footer > div {
+  width: App.$outlineSize;
+  height: App.$height;
+  display: flex;
+  position: absolute;
+  transition: App.$transition;
+  background: App.$primary;
+  z-index: 1;
+}  
+
+
+nav > footer.hidden {
+  transform: translateY(- (App.$height * 4) - (App.$padding * 4));
+}
+
+nav > footer.active {
+  transform: translateY(0);
+}
+
+@media screen and (min-width: App.$maxWidth) {
+  nav > main > header > h1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav > main > header > button {
+    display: none;
+  }
+
+  nav > main > div {
+    height: App.$outlineSize;
+    display: flex;
+    position: absolute;
+    justify-self: end;
+    align-self: flex-end;
+    width: App.$width;
+    z-index: 1;
+    transition: App.$transition;
+    background: App.$primary;
+  }  
+
+  nav > main > button {
+    display: flex;
+  }
+
+  nav > footer.active {
+    transform: translateY(- (App.$height * 4) - (App.$padding * 4));
+  }
+
+  nav > footer.hidden {
+    transform: translateY(- (App.$height * 4) - (App.$padding * 4));
+  }  
+}

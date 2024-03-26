@@ -1,0 +1,15 @@
+@use '../../../App';
+
+.lightMode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightMode > .left {
+  transform: translateX(50%);
+}
+
+.lightMode > .right {
+  transform: translateX(-50%);
+}
